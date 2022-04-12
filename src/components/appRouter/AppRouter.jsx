@@ -8,6 +8,7 @@ import ShopPage from '../../pages/shop/ShopPage'
 import { useContext } from 'react'
 import { Context } from '../../index'
 import { observer } from 'mobx-react-lite'
+import {ADMIN_ROUTE, BASKET_ROUTE, DEVICE_ROUTE, LOGIN_ROUTE, REGISTRATION_ROUTE, SHOP_ROUTE} from "../../utils/consts";
 
 const AppRouter = observer(() => {
 
@@ -17,10 +18,10 @@ const AppRouter = observer(() => {
     <Router>
       {
         userStore._isAuth && <Routes>
-          <Route path={'/'}
+          <Route path={ADMIN_ROUTE}
                  element={<AdminPanelPage />}
           />
-          <Route path={'/basket'}
+          <Route path={BASKET_ROUTE}
                  element={<BasketPage />}
           />
           <Route path='*'
@@ -30,16 +31,16 @@ const AppRouter = observer(() => {
       }
       {
         !userStore._isAuth && <Routes>
-          <Route path={'/shop'}
+          <Route path={SHOP_ROUTE}
                  element={<ShopPage />}
           />
-          <Route path={'/login'}
+          <Route path={LOGIN_ROUTE}
                  element={<AuthPage />}
           />
-          <Route path={'/registration'}
+          <Route path={REGISTRATION_ROUTE}
                  element={<AuthPage />}
           />
-          <Route path={'/device/:id'}
+          <Route path={DEVICE_ROUTE}
                  element={<DevicePage />}
           />
           <Route path='*'

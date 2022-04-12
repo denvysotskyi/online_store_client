@@ -1,6 +1,8 @@
-import { Button, Card, Form } from 'react-bootstrap'
+import { Button, Card, Form, Row } from 'react-bootstrap'
 import { useContext } from 'react'
 import { Context } from '../../index'
+import { NavLink } from 'react-router-dom'
+import {REGISTRATION_ROUTE} from "../../utils/consts";
 
 const AuthForm = () => {
 
@@ -18,13 +20,20 @@ const AuthForm = () => {
         <Form.Control className='mt-3'
                       placeholder='Введите ваш пароль'
         />
-        <Button className='mt-3'
-                style={{marginLeft: 'auto'}}
-                variant='outline-primary'
-                onClick={() => userStore.setIsAuth(true)}
-        >
-          Войти
-        </Button>
+        <Row>
+          <div style={{marginTop: '10px'}}>
+            Нет аккаунта? <NavLink to={REGISTRATION_ROUTE}>
+                            Зарегистрируйтесь
+                          </NavLink>
+          </div>
+          <Button className='mt-3 align-self-end'
+                  variant='outline-success'
+                  type='submit'
+                  onClick={() => userStore.setIsAuth(true)}
+          >
+            Войти
+          </Button>
+        </Row>
       </Form>
     </Card>
   )
