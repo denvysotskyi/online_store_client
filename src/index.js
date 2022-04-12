@@ -11,8 +11,8 @@ export const Context = createContext({})
 const root = createRoot(document.getElementById('root'))
 root.render(
   <Context.Provider value={{
-    user: new UserStore(),
-    device: new DeviceStore()
+    userStore: new UserStore(),
+    deviceStore: new DeviceStore()
   }}>
     <App />
   </Context.Provider>

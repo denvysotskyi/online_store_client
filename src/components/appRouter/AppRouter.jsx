@@ -7,15 +7,16 @@ import DevicePage from '../../pages/device/DevicePage'
 import ShopPage from '../../pages/shop/ShopPage'
 import { useContext } from 'react'
 import { Context } from '../../index'
+import { observer } from 'mobx-react-lite'
 
-const AppRouter = () => {
+const AppRouter = observer(() => {
 
-  const { user: { _isAuth }} = useContext(Context)
+  const { userStore } = useContext(Context)
 
   return (
     <Router>
       {
-        _isAuth && <Routes>
+        userStore._isAuth && <Routes>
           <Route path={'/'}
                  element={<AdminPanelPage />}
           />
@@ -28,7 +29,7 @@ const AppRouter = () => {
         </Routes>
       }
       {
-        !_isAuth && <Routes>
+        !userStore._isAuth && <Routes>
           <Route path={'/shop'}
                  element={<ShopPage />}
           />
@@ -48,6 +49,6 @@ const AppRouter = () => {
       }
     </Router>
   )
-}
+})
 
 export default AppRouter
