@@ -1,16 +1,16 @@
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { Routes } from 'react-router'
-import AdminPanelPage from '../../pages/AdminPanelPage'
-import AuthPage from '../../pages/AuthPage'
-import BasketPage from '../../pages/BasketPage'
-import DevicePage from '../../pages/DevicePage'
-import ShopPage from '../../pages/ShopPage'
+import AdminPanelPage from '../../pages/adminPanel/AdminPanelPage'
+import AuthPage from '../../pages/auth/AuthPage'
+import BasketPage from '../../pages/basket/BasketPage'
+import DevicePage from '../../pages/device/DevicePage'
+import ShopPage from '../../pages/shop/ShopPage'
 import { useContext } from 'react'
-import { UserContext } from '../../index'
+import { Context } from '../../index'
 
 const AppRouter = () => {
 
-  const { user: { _isAuth }} = useContext(UserContext)
+  const { user: { _isAuth }} = useContext(Context)
 
   return (
     <Router>
