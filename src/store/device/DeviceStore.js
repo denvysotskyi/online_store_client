@@ -20,6 +20,7 @@ export default class DeviceStore {
         name: 'Notebooks'
       }
     ]
+
     this._brands = [
       {
         id: 1,
@@ -30,6 +31,7 @@ export default class DeviceStore {
         name: 'Samsung'
       }
     ]
+
     this._devices = [
       {
         id: 1,
@@ -61,6 +63,8 @@ export default class DeviceStore {
       }
     ]
 
+    this._selectedType = {}
+
     makeAutoObservable(this)
   }
 
@@ -76,15 +80,23 @@ export default class DeviceStore {
     this._isDevices = devices
   }
 
+  setSelectedTypes(type) {
+    this._selectedType = type
+  }
+
   get types() {
-    return this._isTypes
+    return this._types
   }
 
   get brands() {
-    return this._isBrands
+    return this._brands
   }
 
   get devices() {
-    return this._isDevices
+    return this._devices
+  }
+
+  get selectedType() {
+    return this._selectedType
   }
 }
