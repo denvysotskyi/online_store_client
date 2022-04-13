@@ -5,19 +5,19 @@ export default class DeviceStore {
     this._types = [
       {
         id: 1,
-        name: 'Phones'
+        name: 'Телефоны'
       },
       {
         id: 2,
-        name: 'Refrigerators'
+        name: 'Холодильники'
       },
       {
         id: 3,
-        name: 'Watches'
+        name: 'Часы'
       },
       {
         id: 4,
-        name: 'Notebooks'
+        name: 'Ноутбуки'
       }
     ]
 

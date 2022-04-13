@@ -5,10 +5,10 @@ const ShopPage = () => {
   return (
     <Container>
       <Row className={'mt-2'}>
-        <Col md={2}>
+        <Col md={3}>
           <TypeBar />
         </Col>
-        <Col md={10}>
+        <Col md={9}>
 
         </Col>
       </Row>
