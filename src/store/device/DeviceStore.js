@@ -1,4 +1,14 @@
 import { makeAutoObservable } from 'mobx'
+import iphone13pro128gb_graphite
+  from '../../assets/images/iphone13pro_128gb_graphite.jpg'
+import samsung_galaxy_z_fold3_12_256bg_phantom_black
+  from '../../assets/images/samsung_galaxy_z_fold3_12_256bg_phantom_black.jpeg'
+import iphone12_mini_64GB_black
+  from '../../assets/images/iphone12_mini_64GB_black.jpeg'
+import samsung_galaxy_s22_8_128gb_green
+  from '../../assets/images/samsung_galaxy_s22_8_128gb_green.jpeg'
+
+
 
 export default class DeviceStore {
   constructor() {
@@ -29,6 +39,14 @@ export default class DeviceStore {
       {
         id: 2,
         name: 'Samsung'
+      },
+      {
+        id: 3,
+        name: 'Xiaomi'
+      },
+      {
+        id: 4,
+        name: 'Lenovo'
       }
     ]
 
@@ -37,33 +55,34 @@ export default class DeviceStore {
         id: 1,
         name: 'iPhone 13 Pro 128GB Graphite',
         price: 38445,
-        rating: 0,
-        image: '0144f3d0-5d99-43aa-8877-55ee1c6662c9.jpg'
+        rating: 5.0,
+        image: iphone13pro128gb_graphite
       },
       {
         id: 2,
         name: 'Galaxy Z Fold3 12/256Gb Phantom Black',
         price: 56999,
-        rating: 0,
-        image: '579fa301-2464-44f3-a0fd-18b666373091.jpg'
+        rating: 4.9,
+        image: samsung_galaxy_z_fold3_12_256bg_phantom_black
       },
       {
         id: 3,
         name: 'iPhone 12 mini 64GB Black',
         price: 21087,
-        rating: 0,
-        image: '0b1f0a64-e0f1-4378-a317-bd6ec92732d3.jpg'
+        rating: 4.3,
+        image: iphone12_mini_64GB_black
       },
       {
         id: 4,
         name: 'Galaxy S22 8/128GB Green',
         price: 29999,
-        rating: 0,
-        image: 'c4da2d11-90ed-4bf1-b281-153986e82073.jpg'
+        rating: 4.1,
+        image: samsung_galaxy_s22_8_128gb_green
       }
     ]
 
     this._selectedType = {}
+    this._selectedBrand = {}
 
     makeAutoObservable(this)
   }
@@ -80,8 +99,12 @@ export default class DeviceStore {
     this._isDevices = devices
   }
 
-  setSelectedTypes(type) {
+  setSelectedType(type) {
     this._selectedType = type
+  }
+
+  setSelectedBrand(brand) {
+    this._selectedBrand = brand
   }
 
   get types() {
@@ -98,5 +121,9 @@ export default class DeviceStore {
 
   get selectedType() {
     return this._selectedType
+  }
+
+  get selectedBrand() {
+    return this._selectedBrand
   }
 }
