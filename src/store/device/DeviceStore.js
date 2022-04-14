@@ -7,8 +7,10 @@ import iphone12_mini_64GB_black
   from '../../assets/images/iphone12_mini_64GB_black.jpeg'
 import samsung_galaxy_s22_8_128gb_green
   from '../../assets/images/samsung_galaxy_s22_8_128gb_green.jpeg'
-
-
+import xiaomi11T_128gb_meteorite_gray
+  from '../../assets/images/xiaomi11T_128gb_meteorite_gray.jpeg'
+import lenovo_legion_pro_256gb_blazing_blue
+  from '../../assets/images/lenovo_legion_pro_256gb_blazing_blue.jpeg'
 
 export default class DeviceStore {
   constructor() {
@@ -78,6 +80,20 @@ export default class DeviceStore {
         price: 29999,
         rating: 4.1,
         image: samsung_galaxy_s22_8_128gb_green
+      },
+      {
+        id: 5,
+        name: '11T 8/128GB Meteorite Gray',
+        price: 15499,
+        rating: 4.4,
+        image: xiaomi11T_128gb_meteorite_gray
+      },
+      {
+        id: 6,
+        name: 'Legion Pro 12/256Gb Blazing Blue',
+        price: 24750,
+        rating: 4.6,
+        image: lenovo_legion_pro_256gb_blazing_blue
       }
     ]
 
