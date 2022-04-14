@@ -8,7 +8,14 @@ import ShopPage from '../../pages/shop/ShopPage'
 import { useContext } from 'react'
 import { Context } from '../../index'
 import { observer } from 'mobx-react-lite'
-import {ADMIN_ROUTE, BASKET_ROUTE, DEVICE_ROUTE, LOGIN_ROUTE, REGISTRATION_ROUTE, SHOP_ROUTE} from "../../utils/consts";
+import {
+  ADMIN_ROUTE,
+  BASKET_ROUTE,
+  DEVICE_ROUTE,
+  LOGIN_ROUTE,
+  REGISTRATION_ROUTE,
+  SHOP_ROUTE
+} from '../../utils/consts'
 
 const AppRouter = observer(() => {
 
@@ -40,7 +47,7 @@ const AppRouter = observer(() => {
           <Route path={REGISTRATION_ROUTE}
                  element={<AuthPage />}
           />
-          <Route path={DEVICE_ROUTE}
+          <Route path={DEVICE_ROUTE + '/:id'}
                  element={<DevicePage />}
           />
           <Route path='*'

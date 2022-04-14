@@ -1,14 +1,16 @@
 import { Card, Col, Image } from 'react-bootstrap'
-import star from '../../assets/icons/star.svg'
 import { useNavigate } from 'react-router'
 import { DEVICE_ROUTE } from '../../utils/consts'
+import star from '../../assets/icons/star.svg'
 
 const DeviceItem = ({ device: { id, name, price, rating, image }}) => {
 
   const navigate = useNavigate()
 
   return (
-    <Col md={3} onClick={() => navigate(DEVICE_ROUTE + '/' + id)}>
+    <Col md={3}
+         onClick={() => navigate(DEVICE_ROUTE + '/' + id)}
+    >
       <Card style={{width: '150px', cursor: 'pointer'}}
             border={'light'}
       >
